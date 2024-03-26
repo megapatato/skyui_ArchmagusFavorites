@@ -9,11 +9,12 @@ class FilterDataExtender implements IListProcessor
 {
   /* CONSTANTS */
   
-	public static var FILTERFLAG_ALL		= 0x0000000F;
-	public static var FILTERFLAG_DEFAULT	= 0x00000001;
-	public static var FILTERFLAG_GEAR		= 0x00000002;
+	public static var FILTERFLAG_ALL		= 0x0000001F;	//sum of rest
+	public static var FILTERFLAG_DEFAULT	= 0x00000001;	// these match filterFlag in Component Definitions
+	public static var FILTERFLAG_GEAR		= 0x00000002;	// used in FavoritesMenu.fla Buttons
 	public static var FILTERFLAG_AID		= 0x00000004;
 	public static var FILTERFLAG_MAGIC		= 0x00000008;
+	public static var FILTERFLAG_SHOUT		= 0x00000010;
 
 	public static var FILTERFLAG_GROUP_ADD	= 0x00000010;
 	public static var FILTERFLAG_GROUP_0	= 0x00000020;
@@ -72,9 +73,12 @@ class FilterDataExtender implements IListProcessor
 				break;
 				
 			case Form.TYPE_SPELL:
-			case Form.TYPE_SHOUT:
 			case Form.TYPE_SCROLLITEM:
 				a_entryObject.filterFlag = FILTERFLAG_MAGIC;
+				break;
+
+			case Form.TYPE_SHOUT:
+				a_entryObject.filterFlag = FILTERFLAG_SHOUT;
 				break;
 			
 			case Form.TYPE_BOOK:

@@ -96,6 +96,7 @@ class FavoritesMenu extends MovieClip
 	public var btnGear: Button;
 	public var btnAid: Button;
 	public var btnMagic: Button;
+	public var btnShout: Button;
 	
 	public var groupButtonFader: MovieClip;
 	
@@ -229,6 +230,7 @@ class FavoritesMenu extends MovieClip
 		btnGear.group = _categoryButtonGroup;
 		btnAid.group = _categoryButtonGroup;
 		btnMagic.group = _categoryButtonGroup;
+		btnShout.group = _categoryButtonGroup;
 		
 		var groupButtons: Array = [];
 		for (var i=1; i<=8; i++) {
@@ -617,11 +619,13 @@ class FavoritesMenu extends MovieClip
 		btnGear.disabled = true;
 		btnAid.disabled = true;
 		btnMagic.disabled = true;
+		btnShout.disabled = true;
 		
 		btnAll.visible = false;
 		btnGear.visible = false;
 		btnAid.visible = false;
 		btnMagic.visible = false;
+		btnShout.visible = false;
 		
 		updateNavButtons();
 	}
@@ -668,11 +672,13 @@ class FavoritesMenu extends MovieClip
 		btnGear.disabled = false;
 		btnAid.disabled = false;
 		btnMagic.disabled = false;
+		btnShout.disabled = false;
 		
 		btnAll.visible = true;
 		btnGear.visible = true;
 		btnAid.visible = true;
-		btnMagic.visible = true
+		btnMagic.visible = true;
+		btnShout.visible = true;
 
 		headerText._visible = true;
 		navButton.visible = false;
