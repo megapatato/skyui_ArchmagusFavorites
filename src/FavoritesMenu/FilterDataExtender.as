@@ -1,4 +1,5 @@
-﻿import skyui.defines.Form;
+﻿import skyui.defines.Actor;
+import skyui.defines.Form;
 
 import skyui.components.list.BasicList;
 import skyui.components.list.IListProcessor;
@@ -9,15 +10,19 @@ class FilterDataExtender implements IListProcessor
 {
   /* CONSTANTS */
   
-	public static var FILTERFLAG_ALL		= 0x0000001F;	//sum of rest
-	public static var FILTERFLAG_DEFAULT	= 0x00000001;	// these match filterFlag in Component Definitions
-	public static var FILTERFLAG_GEAR		= 0x00000002;	// used in FavoritesMenu.fla Buttons
-	public static var FILTERFLAG_AID		= 0x00000004;
-	public static var FILTERFLAG_MAGIC		= 0x00000008;
-	public static var FILTERFLAG_SHOUT		= 0x00000010;
+	public static var FILTERFLAG_ALL					= 0x1FF;	// 511	// Sum of all filter flags
+	public static var FILTERFLAG_DEFAULT				= 0x001;	// 1	// These match filterFlag in Component Definitions
+	public static var FILTERFLAG_GEAR					= 0x002;	// 2	// used in the buttons of FavoritesMenu.fla
+	public static var FILTERFLAG_AID					= 0x004;	// 4	// Also, in the Component Parameters of the btn objects in the FavoritesMenu movie clip
+	public static var FILTERFLAG_SCHOOL_ALTERATION 		= 0x008;	// 8
+	public static var FILTERFLAG_SCHOOL_CONJURATION 	= 0x010;	// 16
+	public static var FILTERFLAG_SCHOOL_DESTRUCTION 	= 0x020;	// 32
+	public static var FILTERFLAG_SCHOOL_ILLUSION 		= 0x040;	// 64
+	public static var FILTERFLAG_SCHOOL_RESTORATION 	= 0x080;	// 128
+	public static var FILTERFLAG_SHOUT					= 0x100;	// 256
 
-	public static var FILTERFLAG_GROUP_ADD	= 0x00000010;
-	public static var FILTERFLAG_GROUP_0	= 0x00000020;
+	public static var FILTERFLAG_GROUP_ADD				= 0x200;	// 512
+	public static var FILTERFLAG_GROUP_0				= 0x400;	// 1024
 	// Group N+1 = (GROUP_N << 1) | GROUP_ADD
 	
 	
@@ -74,7 +79,31 @@ class FilterDataExtender implements IListProcessor
 				
 			case Form.TYPE_SPELL:
 			case Form.TYPE_SCROLLITEM:
-				a_entryObject.filterFlag = FILTERFLAG_MAGIC;
+				switch(a_entryObject.school) {
+					case Actor.AV_ALTERATION:
+						a_entryObject.filterFlag = FILTERFLAG_SCHOOL_ALTERATION;
+						break;
+
+					case Actor.AV_CONJURATION:
+						a_entryObject.filterFlag = FILTERFLAG_SCHOOL_CONJURATION;
+						break;
+
+					case Actor.AV_DESTRUCTION:
+						a_entryObject.filterFlag = FILTERFLAG_SCHOOL_DESTRUCTION;
+						break;
+
+					case Actor.AV_ILLUSION:
+						a_entryObject.filterFlag = FILTERFLAG_SCHOOL_ILLUSION;
+						break;
+
+					case Actor.AV_RESTORATION:
+						a_entryObject.filterFlag = FILTERFLAG_SCHOOL_RESTORATION;
+						break;
+					
+					default:
+						a_entryObject.filterFlag = FILTERFLAG_DEFAULT;
+						break;
+				}
 				break;
 
 			case Form.TYPE_SHOUT:

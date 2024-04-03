@@ -95,7 +95,11 @@ class FavoritesMenu extends MovieClip
 	public var btnAll: Button;
 	public var btnGear: Button;
 	public var btnAid: Button;
-	public var btnMagic: Button;
+	public var btnMagicAlteration: Button;
+	public var btnMagicConjuration: Button;
+	public var btnMagicDestruction: Button;
+	public var btnMagicIllusion: Button;
+	public var btnMagicRestoration: Button;
 	public var btnShout: Button;
 	
 	public var groupButtonFader: MovieClip;
@@ -229,7 +233,11 @@ class FavoritesMenu extends MovieClip
 		btnAll.group = _categoryButtonGroup;
 		btnGear.group = _categoryButtonGroup;
 		btnAid.group = _categoryButtonGroup;
-		btnMagic.group = _categoryButtonGroup;
+		btnMagicAlteration.group = _categoryButtonGroup;
+		btnMagicConjuration.group = _categoryButtonGroup;
+		btnMagicDestruction.group = _categoryButtonGroup;
+		btnMagicIllusion.group = _categoryButtonGroup;
+		btnMagicRestoration.group = _categoryButtonGroup;
 		btnShout.group = _categoryButtonGroup;
 		
 		var groupButtons: Array = [];
@@ -618,13 +626,21 @@ class FavoritesMenu extends MovieClip
 		btnAll.disabled = true;
 		btnGear.disabled = true;
 		btnAid.disabled = true;
-		btnMagic.disabled = true;
+		btnMagicAlteration.disabled = true;
+		btnMagicConjuration.disabled = true;
+		btnMagicDestruction.disabled = true;
+		btnMagicIllusion.disabled = true;
+		btnMagicRestoration.disabled = true;
 		btnShout.disabled = true;
 		
 		btnAll.visible = false;
 		btnGear.visible = false;
 		btnAid.visible = false;
-		btnMagic.visible = false;
+		btnMagicAlteration.visible = false;
+		btnMagicConjuration.visible = false;
+		btnMagicDestruction.visible = false;
+		btnMagicIllusion.visible = false;
+		btnMagicRestoration.visible = false;
 		btnShout.visible = false;
 		
 		updateNavButtons();
@@ -671,13 +687,21 @@ class FavoritesMenu extends MovieClip
 		btnAll.disabled = false;
 		btnGear.disabled = false;
 		btnAid.disabled = false;
-		btnMagic.disabled = false;
+		btnMagicAlteration.disabled = false;
+		btnMagicConjuration.disabled = false;
+		btnMagicDestruction.disabled = false;
+		btnMagicIllusion.disabled = false;
+		btnMagicRestoration.disabled = false;
 		btnShout.disabled = false;
 		
 		btnAll.visible = true;
 		btnGear.visible = true;
 		btnAid.visible = true;
-		btnMagic.visible = true;
+		btnMagicAlteration.visible = true;
+		btnMagicConjuration.visible = true;
+		btnMagicDestruction.visible = true;
+		btnMagicIllusion.visible = true;
+		btnMagicRestoration.visible = true;
 		btnShout.visible = true;
 
 		headerText._visible = true;
