@@ -101,7 +101,7 @@ class FilterDataExtender implements IListProcessor
 						break;
 					
 					default:
-						a_entryObject.filterFlag = FILTERFLAG_DEFAULT;
+						a_entryObject.filterFlag = FILTERFLAG_SHOUT;
 						break;
 				}
 				break;
