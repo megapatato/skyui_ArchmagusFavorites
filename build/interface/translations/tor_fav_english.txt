@@ -1,9 +1,0 @@
-$TOR_FAV_ALL	All
-$TOR_FAV_GEAR	Gear
-$TOR_FAV_ALCH	Alchemy
-$TOR_FAV_ALTE	Alteration
-$TOR_FAV_CONJ	Conjuration
-$TOR_FAV_DEST	Destruction
-$TOR_FAV_ILLU	Illusion
-$TOR_FAV_REST	Restoration
-$TOR_FAV_SHOU	Shouts
