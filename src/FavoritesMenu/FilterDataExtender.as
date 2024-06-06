@@ -106,6 +106,10 @@ class FilterDataExtender implements IListProcessor
 				}
 				break;
 
+			case Form.TYPE_MISC:
+				a_entryObject.filterFlag = FILTERFLAG_GEAR;
+				break;
+			
 			case Form.TYPE_SHOUT:
 				a_entryObject.filterFlag = FILTERFLAG_SHOUT;
 				break;
