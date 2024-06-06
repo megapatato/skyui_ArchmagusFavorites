@@ -11,7 +11,8 @@ The following aspect ratios are offered in the mod's FOMOD installer:
 
 |ratio      |example        |name / usage   |
 |-|-|-|
-|21:9       |2560x1080      |Ultrawide      |
+|32:9       |3840x1080      |Super-wide     |
+|21:9       |2560x1080      |Ultra-wide     |
 |16:9       |1920x1080      |FullHD, 4K     |
 |16:10      |1728x1080      |WXGA et al     |
 |3:2        |1620x1080      |Microsoft's Surface line|
