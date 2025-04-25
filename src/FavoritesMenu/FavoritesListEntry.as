@@ -72,10 +72,12 @@ class FavoritesListEntry extends BasicListEntry
 				textField.SetText(a_entryObject.text);
 				hotkeyIcon._visible = false;
 			}
-			var maxTextLength: Number = 32;
-			if (textField.text.length > maxTextLength) {
-				textField.SetText(textField.text.substr(0, maxTextLength - 3) + "...");
+			// Wider text box allows wider strings; this accounts for variable font sizes
+			while(textField.textWidth > textField._width)
+			{
+				textField.SetText(textField.text.substring(0, textField.text.length - 1));
 			}
+			textField.SetText(textField.text.substr(0, textField.text.length - 3) + "...");
 		}
 //		textField.textAutoSize = "shrink";
 
