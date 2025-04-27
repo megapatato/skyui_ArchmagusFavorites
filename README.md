@@ -11,12 +11,12 @@ The following aspect ratios are offered in the mod's FOMOD installer:
 
 |ratio      |example        |name / usage   |
 |-|-|-|
-|32:9       |3840x1080      |Super-wide     |
-|21:9       |2560x1080      |Ultra-wide     |
-|16:9       |1920x1080      |FullHD, 4K     |
-|16:10      |1728x1080      |WXGA et al     |
-|3:2        |1620x1080      |Microsoft's Surface line|
-|4:3        |1440x1080      |Like PAL & NTSC|
+|32:9       |3840 x 1080    |Super-wide     |
+|21:9       |2560 x 1080    |Ultra-wide     |
+|16:9       |1920 x 1080    |FullHD, 4K     |
+|16:10      |1728 x 1080    |WXGA et al     |
+|3:2        |1620 x 1080    |Microsoft's Surface line|
+|4:3        |1440 x 1080    |Like PAL & NTSC|
 
 The assets are vectorized, so only the width/height proportion is relevant. As Flash files, they will expand to fit the screen.
 
