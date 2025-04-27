@@ -72,12 +72,19 @@ class FavoritesListEntry extends BasicListEntry
 				textField.SetText(a_entryObject.text);
 				hotkeyIcon._visible = false;
 			}
-			// Wider text box allows wider strings; this accounts for variable font sizes
-			while(textField.textWidth > textField._width)
-			{
+			// Wider text box allows wider strings; too long ones get truncated and ellipsed.
+			// textField._width reports the value specified in the source Flash file, not
+			// the value as rendered in screen pixel size. textField.textWidth does report
+			// in the latter. We convert to "render time" pixels, then compare the widths.
+			// This also accounts for variable font sizes
+			var adjusted = false;
+			while(textField.textWidth > (textField._width * 100 / textField._xscale)) {
 				textField.SetText(textField.text.substring(0, textField.text.length - 1));
+				adjusted = true;
 			}
-			textField.SetText(textField.text.substr(0, textField.text.length - 3) + "...");
+			if (adjusted) {
+				textField.SetText(textField.text.substr(0, textField.text.length - 3) + "...");
+			}
 		}
 //		textField.textAutoSize = "shrink";
 
