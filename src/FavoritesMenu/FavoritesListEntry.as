@@ -77,13 +77,9 @@ class FavoritesListEntry extends BasicListEntry
 			// the value as rendered in screen pixel size. textField.textWidth does report
 			// in the latter. We convert to "render time" pixels, then compare the widths.
 			// This also accounts for variable font sizes
-			var adjusted = false;
-			while(textField.textWidth > (textField._width * 100 / textField._xscale)) {
-				textField.SetText(textField.text.substring(0, textField.text.length - 1));
-				adjusted = true;
-			}
-			if (adjusted) {
-				textField.SetText(textField.text.substr(0, textField.text.length - 3) + "...");
+			var entryWidthRendered: Number = textField._width * 100 / textField._xscale;
+			while(textField.textWidth > entryWidthRendered) {
+				textField.SetText(textField.text.substring(0, textField.text.length - 4) + "...");
 			}
 		}
 //		textField.textAutoSize = "shrink";
